@@ -47,7 +47,7 @@ const Post = ({ data, location }) => {
                                     <span>{new Date(post.created_at).toLocaleDateString()}</span>
                                 </div>
                                 <div className="post-card-footer-right">
-                                    <div>{readingTime}</div>
+                                    <small>{readingTime}</small>
                                 </div>
                             </div>
                             {/* The main post content */ }
