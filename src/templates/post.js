@@ -16,6 +16,7 @@ import { MetaData } from '../components/common/meta'
 */
 const Post = ({ data, location }) => {
     const post = data.ghostPost
+    const publishedAt = new Date(post.published_at)
     const readingTime = readingTimeHelper(post)
 
     useEffect(() => {
@@ -44,7 +45,7 @@ const Post = ({ data, location }) => {
                             <h1 className="content-title">{post.title}</h1>
                             <div className="post-card-footer">
                                 <div className="post-card-footer-left">
-                                    <small>{new Date(post.created_at).toLocaleDateString()}</small>
+                                    <small>{publishedAt.toLocaleDateString()}</small>
                                 </div>
                                 <div className="post-card-footer-right">
                                     <small>{readingTime}</small>
@@ -67,7 +68,7 @@ Post.propTypes = {
     data: PropTypes.shape({
         ghostPost: PropTypes.shape({
             codeinjection_styles: PropTypes.object,
-            created_at: PropTypes.string.isRequired,
+            published_at: PropTypes.string.isRequired,
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,

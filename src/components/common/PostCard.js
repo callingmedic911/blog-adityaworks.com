@@ -5,6 +5,7 @@ import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 
 const PostCard = ({ post }) => {
     const url = `/${post.slug}/`
+    const publishedAt = new Date(post.published_at)
     const readingTime = readingTimeHelper(post)
     
     return (
@@ -22,7 +23,7 @@ const PostCard = ({ post }) => {
                 </Link>
                 <div className="post-card-footer">
                     <div className="post-card-footer-left">
-                        <small>{new Date(post.created_at).toLocaleDateString()}</small>
+                        <small>{publishedAt.toLocaleDateString()}</small>
                     </div>
                     <div className="post-card-footer-right">
                         <small>{readingTime}</small>
@@ -42,7 +43,7 @@ const PostCard = ({ post }) => {
 PostCard.propTypes = {
     post: PropTypes.shape({
         slug: PropTypes.string.isRequired,
-        created_at: PropTypes.string.isRequired,
+        published_at: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         html: PropTypes.string.isRequired,
         feature_image: PropTypes.string,
