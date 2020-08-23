@@ -30,6 +30,7 @@ what's here to work the way you'd like it to.
     /* Colours */
     --color-primary: #5b9ddf;
     --color-base: #0876ff;
+    --  : #0a0b0c;
     --color-secondary: #5B7A81;
     --color-border: #c7d5d8;
     --color-bg: #f5f5f5;
@@ -1167,6 +1168,10 @@ h6 {
 
 /* Custom Styles
 /* ---------------------------------------------------------- */
+
+.content-body pre {
+  background: inherit;
+}
 
 .post-full-content .content-title {
   font-size: 4rem;
