@@ -44,7 +44,7 @@ const Post = ({ data, location }) => {
                             <h1 className="content-title">{post.title}</h1>
                             <div className="post-card-footer">
                                 <div className="post-card-footer-left">
-                                    <span>{new Date(post.created_at).toLocaleDateString()}</span>
+                                    <small>{new Date(post.created_at).toLocaleDateString()}</small>
                                 </div>
                                 <div className="post-card-footer-right">
                                     <small>{readingTime}</small>
