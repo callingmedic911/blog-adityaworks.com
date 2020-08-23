@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: `https://upbeat-dijkstra-aa67ba.netlify.app`, // Site domain. Do not include a trailing slash!
+    siteUrl: `https://blog.adityaworks.com`, // Site domain. Do not include a trailing slash!
 
     postsPerPage: 5, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
