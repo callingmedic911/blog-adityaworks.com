@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
@@ -42,7 +42,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     </div>
                                 </Link>
                                 <div className="site-mast-right">
-                                    <a className="site-nav-item" href={`https://adityaworks.com`}><img className="site-nav-icon" src="/images/icons/home.svg" alt="Home" style={{ height: `22px` }}  /></a>
+                                    <a className="site-nav-item" href={`https://adityaworks.com`}><img className="site-nav-icon" src="/images/icons/home.svg" alt="Home" style={{ height: `22px` }} /></a>
                                     <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
                                 </div>
                             </div>
