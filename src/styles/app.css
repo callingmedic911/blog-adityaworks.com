@@ -539,8 +539,8 @@ h6 {
 
 .content {
     margin: 0 auto;
-    font-size: 2rem;
-    line-height: 1.7em;
+    font-size: 2.2rem;
+    line-height: 1.5em;
 }
 
 .content-body {
@@ -584,7 +584,7 @@ h6 {
 
 @media (max-width: 500px) {
     .content {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 }
 
