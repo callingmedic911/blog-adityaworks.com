@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { readingTime as readingTimeHelper } from '@tryghost/helpers'
+import Prism from 'prismjs'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -14,6 +16,12 @@ import { MetaData } from '../components/common/meta'
 */
 const Post = ({ data, location }) => {
     const post = data.ghostPost
+    const readingTime = readingTimeHelper(post)
+
+    useEffect(() => {
+        // call the highlightAll() function to style our code blocks
+        Prism.highlightAll()
+    })
 
     return (
         <>
@@ -34,7 +42,14 @@ const Post = ({ data, location }) => {
                             </figure> : null }
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
-
+                            <div className="post-card-footer">
+                                <div className="post-card-footer-left">
+                                    <span>{new Date(post.created_at).toLocaleDateString()}</span>
+                                </div>
+                                <div className="post-card-footer-right">
+                                    <div>{readingTime}</div>
+                                </div>
+                            </div>
                             {/* The main post content */ }
                             <section
                                 className="content-body load-external-scripts"
@@ -52,6 +67,7 @@ Post.propTypes = {
     data: PropTypes.shape({
         ghostPost: PropTypes.shape({
             codeinjection_styles: PropTypes.object,
+            created_at: PropTypes.string.isRequired,
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,

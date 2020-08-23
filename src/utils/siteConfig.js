@@ -1,7 +1,7 @@
 module.exports = {
     siteUrl: `https://upbeat-dijkstra-aa67ba.netlify.app`, // Site domain. Do not include a trailing slash!
 
-    postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
+    postsPerPage: 5, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
     // siteTitleMeta: `Aditya's Blog`, // This allows an alternative site title for meta data for pages.
     // siteDescriptionMeta: `Randomly logged pages`, // This allows an alternative site description for meta data for pages.
