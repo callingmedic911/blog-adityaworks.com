@@ -118,7 +118,9 @@ module.exports = {
             options: {
                 query: `
                 {
-                    allGhostPost {
+                    allGhostPost(
+                      filter: {slug: {ne: "data-schema"}}
+                    ) {
                         edges {
                             node {
                                 id
