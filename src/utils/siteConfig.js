@@ -11,6 +11,6 @@ module.exports = {
 
     shortTitle: `Adiya's Blog`, // Used for App manifest e.g. Mobile Home Screen
     siteIcon: `favicon.png`, // Logo in /static dir used for SEO, RSS, and App manifest
-    backgroundColor: `#5b9ddf`, // Used for Offline Manifest
-    themeColor: `#5b9ddf`, // Used for Offline Manifest
+    backgroundColor: `#f5f5f5`, // Used for Offline Manifest
+    themeColor: `#0876ff`, // Used for Offline Manifest
 }
