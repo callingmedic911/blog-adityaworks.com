@@ -18,7 +18,8 @@ import '../../styles/app.css'
 */
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
-
+    const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
+    
     return (
         <>
             <Helmet>
@@ -43,6 +44,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 </Link>
                                 <div className="site-mast-right">
                                     <a className="site-nav-item" href={`https://adityaworks.com`}><img className="site-nav-icon" src="/images/icons/home.svg" alt="Home" style={{ height: `22px` }} /></a>
+                                    {site.twitter && <a href={twitterUrl} className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
                                     <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
                                 </div>
                             </div>
